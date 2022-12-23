@@ -1,17 +1,18 @@
-// 1. Zapytaj usera ile ma subskrybcji
-// 2. Sprawdz jaki ma aktualni status - 100 - brąz, 1000 - złoty, 10000 - diament
+// 1. Zapytaj usera ile ma subskrypcji
+// 2. Sprawdz jaki ma aktualnie status - 100 - brąz, 1000 - złoty, 10000 - diament
+// 3. Ile subskrypcji przybywa miesięcznie
+// 4. Oblicz jaki status będzie miał w następne 12 mcy
+// 5. Pytaj użytkownika aż poda liczbę - pętla while albo do while aż isnan będzie false
+// 6. Dodaj obsługę przycisku anuluj + console log co prompt zwraca jak się wciśnie anuluj, parseint do innej zmiennej
 
-// 3. Ile subskrybcji przybywa miesięcznie
-// 4. Oblicz jaki status będzie miał w nastepne 12mc
-// 5. Pytaj użytkownika tak dużo razy aż poda numer *
-// 6. Dodaj obsługę przycisku anuluj *
 
 const subscribersNumber = parseInt(prompt("How many subscribers do you have?"));
 
-console.log(subscribersNumber)
+console.log(subscribersNumber);
+
 if (isNaN(subscribersNumber)) {
-    alert('value is not a number')
-}
+    alert("Value not a number")
+};
 
 if (subscribersNumber >= 100 && subscribersNumber < 1000) {
     console.log('You have bronze status')
@@ -21,22 +22,19 @@ if (subscribersNumber >= 100 && subscribersNumber < 1000) {
     console.log('You have diamond status')
 };
 
-const subPerMonth = parseInt(prompt("How many subscribers do you have per month?"));
-
-console.log(subPerMonth)
+const subPerMonth = parseInt(prompt("How many subscribers increase monthly?"));
+console.log(subPerMonth);
 if (isNaN(subPerMonth)) {
-    alert('value is not a number')
-}
+    alert("Value not a number")
+};
 
 const subPerYear = subPerMonth * 12;
-
 const subInNextYear = subscribersNumber + subPerYear;
 
 if (subInNextYear >= 100 && subInNextYear < 1000) {
-    console.log('You have bronze status')
+    console.log('You will have bronze status')
 } else if (subInNextYear >= 1000 && subInNextYear < 10000) {
-    console.log('You have gold status')
+    console.log('You will have gold status')
 } else if (subInNextYear >= 10000) {
-    console.log('You have diamond status')
+    console.log('You will have diamond status')
 };
-
