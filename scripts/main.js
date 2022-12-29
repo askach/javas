@@ -6,13 +6,25 @@
 // 6. Dodaj obsługę przycisku anuluj + console log co prompt zwraca jak się wciśnie anuluj, parseint do innej zmiennej
 
 
-const subscribersNumber = parseInt(prompt("How many subscribers do you have?"));
+var subscribersNumber = parseInt(prompt("How many subscribers do you have?"));
 
 console.log(subscribersNumber);
 
-if (isNaN(subscribersNumber)) {
-    alert("Value not a number")
-};
+while (isNaN(subscribersNumber)) {
+    alert("Value not a number");
+    var subscribersNumber = parseInt(prompt("How many subscribers do you have?"));
+}
+
+console.log(subscribersNumber);
+
+// do {
+//     console.log(subscribersNumber);
+
+// } while (isNaN(subscribersNumber));
+
+// if (isNaN(subscribersNumber)) {
+//     alert("Value not a number")
+// };
 
 if (subscribersNumber >= 100 && subscribersNumber < 1000) {
     console.log('You have bronze status')
@@ -22,11 +34,19 @@ if (subscribersNumber >= 100 && subscribersNumber < 1000) {
     console.log('You have diamond status')
 };
 
-const subPerMonth = parseInt(prompt("How many subscribers increase monthly?"));
+var subPerMonth = parseInt(prompt("How many subscribers increase monthly?"));
 console.log(subPerMonth);
-if (isNaN(subPerMonth)) {
-    alert("Value not a number")
-};
+
+
+// if (isNaN(subPerMonth)) {
+//     alert("Value not a number")
+// };
+
+while (isNaN(subPerMonth)) {
+    alert("Value not a number");
+    var subPerMonth = parseInt(prompt("How many subscribers increase monthly?"));
+}
+
 
 const subPerYear = subPerMonth * 12;
 const subInNextYear = subscribersNumber + subPerYear;
