@@ -18,8 +18,7 @@ function between(min, max) {
 let correctAnswer = 0;
 let incorrectAnswer = 0;
 let isValueNumber;
-
-// przy anuluj, nie wychodzi tylko bierze za błędną odpowiedź
+const exitCode = 1;
 
 for (let i = 0; i < 10; i++) {
   const firstNumber = between(0, 10);
@@ -28,6 +27,10 @@ for (let i = 0; i < 10; i++) {
   do {
     multResult = prompt(`What's the result? ${firstNumber} * ${secondNumber}`);
     isValueNumber = isNaN(parseInt(multResult));
+
+    if (multResult === null) {
+      process.exit();
+    }
 
     if (isValueNumber && multResult !== null) {
       alert("Value not a number");
