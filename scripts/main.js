@@ -17,22 +17,31 @@ function between(min, max) {
 
 let correctAnswer = 0;
 let incorrectAnswer = 0;
+let isValueNumber;
 
-for (let i = 0; i < 2; i++) {
+// przy anuluj, nie wychodzi tylko bierze za błędną odpowiedź
+
+for (let i = 0; i < 10; i++) {
   const firstNumber = between(0, 10);
   const secondNumber = between(0, 10);
-  const multResult = prompt(
-    `What's the result? ${firstNumber} * ${secondNumber}`
-  );
 
-  if (firstNumber * secondNumber === parseInt(multResult)) {
-    correctAnswer = parseInt(correctAnswer) + 1;
-  } else {
-    incorrectAnswer = parseInt(incorrectAnswer) + 1;
-  }
+  do {
+    multResult = prompt(`What's the result? ${firstNumber} * ${secondNumber}`);
+    isValueNumber = isNaN(parseInt(multResult));
+
+    if (isValueNumber && multResult !== null) {
+      alert("Value not a number");
+    } else if (firstNumber * secondNumber === parseInt(multResult)) {
+      {
+        correctAnswer = parseInt(correctAnswer) + 1;
+      }
+    } else {
+      incorrectAnswer = parseInt(incorrectAnswer) + 1;
+    }
+  } while (isValueNumber && multResult !== null);
 }
 
-if (correctAnswer >= 1) {
+if (correctAnswer >= 5) {
   alert(`Test passed! ${correctAnswer} / ${correctAnswer + incorrectAnswer}`);
 } else {
   alert(
@@ -44,4 +53,4 @@ if (correctAnswer >= 1) {
 
 console.log(correctAnswer);
 console.log(incorrectAnswer);
-console.log(correctAnswer / (correctAnswer + incorrectAnswer));
+console.log(`${(correctAnswer / (correctAnswer + incorrectAnswer)) * 100}%`);
