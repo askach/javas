@@ -15,7 +15,8 @@ function between(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// const myNumber = between(0, 10);
+let correctAnswear = 0;
+let incorrectAnswear = 0;
 
 for (let i = 0; i < 10; i++) {
   const firstNumber = between(0, 10);
@@ -23,10 +24,22 @@ for (let i = 0; i < 10; i++) {
   const multResult = prompt(
     `What's the result? ${firstNumber} * ${secondNumber}`
   );
+
+  if (firstNumber * secondNumber === parseInt(multResult)) {
+    // alert("Correct result");
+    correctAnswear = parseInt(correctAnswear) + 1;
+  } else {
+    // alert("Correct result");
+    incorrectAnswear = parseInt(incorrectAnswear) + 1;
+  }
 }
 
-// if (firstNumber * secondNumber === parseInt(multResult)) {
-//   alert("Correct result");
-// } else {
-//   alert("Incorrect result");
-// }
+if (correctAnswear >= 5) {
+  alert("Test passed!");
+} else {
+  alert("Test failed");
+}
+
+console.log(correctAnswear);
+console.log(incorrectAnswear);
+console.log(correctAnswear / (correctAnswear + incorrectAnswear));
