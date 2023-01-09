@@ -29,6 +29,7 @@ for (let i = 0; i < 10; i++) {
     isValueNumber = isNaN(parseInt(multResult));
 
     if (multResult === null) {
+      alert("Thank you!");
       process.exit();
     }
 
