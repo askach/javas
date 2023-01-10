@@ -11,6 +11,9 @@
 // Math.floor()
 // Math.ceil()
 
+// liczba pytań zależna od użytkownika
+// licza pytań jako zmienna
+
 function between(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -18,6 +21,7 @@ function between(min, max) {
 let correctAnswer = 0;
 let incorrectAnswer = 0;
 let isValueNumber;
+// const percentPassed = 50%;
 
 for (let i = 0; i < 10; i++) {
   const firstNumber = between(0, 10);
