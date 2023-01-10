@@ -21,6 +21,7 @@ function between(min, max) {
 let correctAnswer = 0;
 let incorrectAnswer = 0;
 let isValueNumber;
+// const questionsNumber = 10;
 // const percentPassed = 50%;
 
 for (let i = 0; i < 10; i++) {
